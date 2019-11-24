@@ -21,7 +21,7 @@
 
 ### `TypeScript`运行方式
 ----
-`TypeScript`运行方式（运行环境）主要有一下三种：
+`TypeScript` 运行方式（运行环境）主要有一下三种：
 
 #### 在线complier
 
@@ -46,7 +46,7 @@ export class Hello {
 
 #### 使用IDE
 
-可以使用vsCode，配置出`TypeScript`的运行环境，具体可参考：https://code.visualstudio.com/docs/typescript/typescript-tutorial
+可以使用vsCode，配置出 `TypeScript`的运行环境，具体可参考：https://code.visualstudio.com/docs/typescript/typescript-tutorial
 
 
 ### `TypeScript`的基本用法
@@ -60,7 +60,7 @@ export class Hello {
 - number
 - string
 - array
-- tuple, 允许表示一个一直元素数量和类型的数组
+- tuple,允许表示一个一直元素数量和类型的数组
 - enum
 - any
 - void
@@ -163,15 +163,14 @@ let mySquare = createSquare(squareOptions);
 ```
 
 #### 类
-
-JavaScript的ES6，有class，也就是我们的类，虽然class实质上是 JavaScript 现有的基于原型的继承的语法糖。可以通过一个类new一个对象<sup>[3]</sup>。
+JavaScript的ES6，有class，也就是我们的类，虽然class实质上是 JavaScript 现有的基于原型的继承的语法糖。可以通过一个类new一个对象<sup>[3]</sup>。
 
 ```javascript
 class Person {
     // protected表示只能被类内部，继承的类内部访问，不能被外部访问
     protected name: string;
     // 只读属性
-    readonly gender: string = '女';
+    readonly gender: string = '女';
     // static表示所有实例共有的成员。
     static  workPlace: string = 'hikvision';
     // constructor为构造函数，在new一个类时，调用该方法
@@ -196,7 +195,7 @@ class Employee extends Person {
         this._age = newAge;
     }
     constructor(name: string, department: string) {
-        // super（)表示父类构造器
+        // super（)表示父类构造器
         super(name);
         this.department = department;
     }
@@ -212,9 +211,8 @@ let john = new Person("John"); // 错误: 'Person' 的构造函数是被保护�
 ```
 
 
-#### 函数
-
-在JavaScript中，<s>函数是一等公民</s>，函数是JavaScript应用程序的基础，必须介绍。首先，定义函数的三种方式有：
+#### 函数
+在JavaScript中，<s>函数是一等公民</s>，函数是JavaScript应用程序的基础，必须介绍。首先，定义函数的三种方式有：
 
 
 1. 函数声明
@@ -259,15 +257,14 @@ function buildName(firstName: string, lastName?: string) {
 
 ----
 
-
-参考文献：
+参考文献：
 
 
 [1] http://www.typescriptlang.org/
 
 [2] https://linux.cn/article-8774-1.html 介绍TypeScript编译原理
 
-[3] https://juejin.im/post/5d25b3cce51d4510a37bac7a 介绍类
+[3] https://juejin.im/post/5d25b3cce51d4510a37bac7a
 
 
 
