@@ -12,7 +12,7 @@
 
 `TypeScript` 是 `JavaScript` 的超集，这意味着他支持所有的 JavaScript 语法。并在此之上对 JavaScript 添加了一些扩展，如 class / interface / module 等。这样会大大提升代码的可阅读性。
 
-强类型语言的优势在于静态类型检查，具体可以参见 http://www.zhihu.com/question... 的回答。概括来说主要包括以下几点<sup>[1]</sup>：
+强类型语言的优势在于静态类型检查，概括来说主要包括以下几点<sup>[1]</sup>：
 
 - 静态类型检查,减少编译阶段引起的错误
 - 增强了编辑器和 IDE 的功能
@@ -255,6 +255,63 @@ function buildName(firstName: string, lastName?: string) {
 
 ### vue-cli中使用`TypeScript`
 
+>Vue CLI 3.x 提供了内建的 TypeScript 工具支持。
+
+使用命令：`vue create <project-name>`
+
+选择配置，如下图所示:
+
+![vue-cli](vue-cli.png)
+
+在上图中，可以看出，选用的是class风格的组件语法，这样脚手架就会帮我们安装以下组件：
+
+- vue-class-component
+
+- vue-property-decorator
+
+#### vue-class-component
+
+使用vue-class-component(官方提供)，可以以class的模式写vue组件：
+
+1. methods，钩子都可以直接写作class的方法
+
+2. computed属性可以直接通过get来获得
+
+3. 初始化data可以声明为class的属性
+
+4. 其他的都可以放到Component装饰器里 
+
+举例如下：
+
+```javascript
+@Component({
+  components: { },
+  props: { },
+})
+export default class extends Vue {
+  // data
+  message = 'Hello'
+  // computed
+  get reverseMessage () {
+    return this.message.split('').reverse().join('')
+  }
+  // method
+  changeMessage () {
+    this.message = 'Good bye'
+  }
+  // Lifecycle hooks
+  created () { },
+  mounted () { },
+  updated () { },
+  destroyed () { }
+}
+
+```
+关于vue-class-component详细介绍，可以参考<sup>[4]</sup>
+
+#### vue-property-decorator
+vue-property-decorator（出自第三方）深度依赖了vue-class-component，拓展出了更多操作符：@Prop、@Emit、@Inject、@Model、@Provide、@Watch；
+
 ----
 
 参考文献：
@@ -265,6 +322,8 @@ function buildName(firstName: string, lastName?: string) {
 [2] https://linux.cn/article-8774-1.html 介绍TypeScript编译原理
 
 [3] https://juejin.im/post/5d25b3cce51d4510a37bac7a
+
+[4] https://github.com/vuejs/vue-class-component
 
 
 
